@@ -1,9 +1,11 @@
-<? session_start() ?> 
+<? session_start()
+ 
+  ?> 
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-       <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
         <title>Sanatorio Español </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -331,7 +333,7 @@
                                                 <li><a href="dire.html">Directorio</a>
                                                    
                                                 </li>
-                                                <li><a href="cont.html">Contacto</a></li>
+                                                     <li><a href="cont.html">Contacto</a></li>
                                             </ul>
                                     </nav>
                                 </div>					
@@ -360,6 +362,9 @@
                     </div>
                 </div>
                 <!-- banner end -->
+                
+              
+                
                 <?php
                    
 $servername = "localhost";
@@ -369,13 +374,14 @@ $dbname = "tecshops_sanatorio_blog";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+$acentos = $conn->query("SET NAMES 'utf8'");
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "select id, imagen, fecha, titulo, autor, especialidad, parte1, parte2, parte3, parte4, parte5, parte6 from blog";
-$result = $conn->query($sql);
+$sql = "select imagen, fecha, titulo, autor, especialidad, parte1, parte2, parte3, parte4, parte5, parte6, parte7, parte8, parte9, parte10, parte11, parte12, parte13, parte14, parte15, parte16, parte17, parte18, parte19, parte20 from blog order by fecha desc";
+$result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
 
 //if ($result->num_rows > 0) {
     // output data of each row
@@ -389,43 +395,77 @@ $result = $conn->query($sql);
 ?>
                 
                 <div class="latest-blog bg-white marg-100">
+                  
+                                
                      <div class="container">
+                     <div class="gallery_menu portfolio-menu">
+                                    <ul id="filter" class="filter-menu" align="center">
+                                        <li class="current_menu_item" data-filter="*">Todo </li>
+                                        <li data-filter=".graphic">Gineco Obstetricia</li>
+                                        <li data-filter=".print">Pediatría</li>
+                                        <li data-filter=".Branding">Medicina Interna</li>
+                                        <li data-filter=".app">Urgencias</li>
+                                        <div class="search-box">
+                                    <form action="buscador.php" method="POST">
+                                        <input type="text" name="input" placeholder="Buscar..." style='background-color:green;display:block;width:auto'>
+                                        <button type="submit" style='background-color:green;display:block;width:auto'><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                                    </ul>
+    
+                                </div><!-- gallery_menu End --> 
                         <div class="row">
                     <?php
 					if ($result->num_rows > 0) {
 					while ($row = $result->fetch_assoc()){
-                        $id=$row["id"];
                         $imagen=$row["imagen"];
                         $fecha= $row["fecha"];
-                        $titulo= $row["titulo"];
+                        $titulo=$row["titulo"];
                         $autor= $row["autor"];
-                        $especialidad= $row["especialidad"];
-                        $parte1= $row["parte1"];
-                        $parte1= $row["parte2"];
-                        $parte1= $row["parte3"];
-                        $parte1= $row["parte4"];
-                        $parte1= $row["parte5"];
-                        $parte1= $row["parte6"];
+                        $especialidad=$row["especialidad"];
+                        $parte1=$row["parte1"];
+                        $parte2= $row["parte2"];
+                        $parte3= $row["parte3"];
+                        $parte4= $row["parte4"];
+                        $parte5= $row["parte5"];
+                        $parte6= $row["parte6"];
+                        $parte7= $row["parte7"];
+                        $parte8= $row["parte8"];
+                        $parte9= $row["parte9"];
+                        $parte10= $row["parte10"];
+                        $parte11= $row["parte11"];
+                        $parte12= $row["parte12"];
+                        $parte13= $row["parte13"];
+                        $parte14= $row["parte14"];
+                        $parte15= $row["parte15"];
+                        $parte16= $row["parte16"];
+                        $parte17= $row["parte17"];
+                        $parte18= $row["parte18"];
+                        $parte19= $row["parte19"];
+                        $parte20= $row["parte20"];
+                       
 				?>
                     
-                            <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="col-md-4 col-sm-6 col-xs-12" style="overflow: auto; width: 380px; height: 500px; background-color:#fff; border: 1px solid #fff; margin: 20px auto 15px auto" >
                                 <div class="single-latest-blog bg-white">
                                     <div class="single-latest-blog-img">
                                         <img src="<?php echo  $row["imagen"] ?>" alt="">
                                         <div class="single-latest-blog-date">
-                                            <h4><?php echo  $row["fecha"] ?></h4>
-                                            <h6><?php echo  $row["especialidad"] ?></h6>
+                                          
+                                            <h6><?php echo $row["titulo"] ?></h6>
                                         </div>
-                                        <a class="read-more" href="blogdeta.php?id=<?php echo $id ?>">re</a>
+                                        <a class="read-more" href="blogdeta.php?imagen=<?php echo $imagen?>&fecha=<?php echo $fecha?>&titulo=<?php echo $titulo?>&autor=<?php echo $autor?>&especialidad=<?php echo $especialidad?>&parte1=<?php echo $parte1 ?>&parte2=<?php echo $parte2 ?>&parte3=<?php echo $parte3 ?>&parte4=<?php echo $parte4 ?>&parte5=<?php echo $parte5 ?>&parte6=<?php echo $parte6 ?>&parte7=<?php echo $parte7 ?>&parte8=<?php echo $parte8 ?>&parte9=<?php echo $parte9 ?>&parte10=<?php echo $parte10 ?>&parte11=<?php echo $parte11 ?>&parte12=<?php echo $parte12 ?>&parte13 =<?php echo $parte13 ?>&parte14=<?php echo $parte14 ?>&parte15=<?php echo $parte15 ?>&parte16=<?php echo $parte16 ?>&parte17=<?php echo $parte17 ?> &parte18=<?php echo $parte18 ?>&parte19=<?php echo $parte19 ?>&parte20=<?php echo $parte20 ?>">Ver-completo</a>
                                     </div>
                                     <div class="single-latest-blog-info">
-                                        <h4><a href="#"><?php echo  $row["titulo"] ?></a></h4>
-                                        <h6><?php echo $row["autor"] ?></h6>
-                                        <p><?php echo $row["parte1"] ?></p>
+                                        <h4><a href="#"><?php echo  $row["autor"] ?></a></h4>
+                                       
+                                        <h6><?php echo $row["especialidad"] ?>
+                                        </h6> <h6><?php echo $row["fecha"] ?></h6>
+                                        <p align="justify"><?php echo $row["parte1"] ?></p>
                                     </div>
                                 </div>
-                         
-                    </div>
+                                <br></br>
+                            </div>
                     <?php
 
                        } } else {
@@ -439,7 +479,7 @@ $result = $conn->query($sql);
                     </div>
                 </div>
                 <!-- blog area end -->
-                        <footer class="footer-area">
+                              <footer class="footer-area">
                     <div class="main-footer-area ptb-90">
                         <div class="container">
                             <div class="row">

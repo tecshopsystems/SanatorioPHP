@@ -5,8 +5,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       
+      
         <title>Sanatorio Español </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -368,48 +369,8 @@
                     </div>
                 </div>
                 <!-- banner end -->
-
-                     <?php
-                   
-$servername = "localhost";
-$username = "tecshops_selectt";
-$password = "Anabantha666";
-$dbname = "tecshops_sanatorio_blog";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "select  imagen, fecha, titulo, autor, especialidad, parte1, parte2, parte3, parte4, parte5, parte6 from blog where id =´".$_GET['id']."´";
-$result = $conn->query($sql);
-
-//if ($result->num_rows > 0) {
-    // output data of each row
-  //  while($row = $result->fetch_assoc()) {
-    //    echo "id: " . $row["nombre_autor"]. " - Name: " . $row["especialidad"]. " " . $row["titulo_post"]. "<br>";
-    //}
-//} else {
-  //  echo "0 results";
-//}
-
-					if ($result->num_rows > 0) {
-					while ($row = $result->fetch_assoc()){
-                        $id=$row["id"];
-                        $imagen=$row["imagen"];
-                        $fecha= $row["fecha"];
-                        $titulo= $row["titulo"];
-                        $autor= $row["autor"];
-                        $especialidad= $row["especialidad"];
-                        $parte1= $row["parte1"];
-                        $parte1= $row["parte2"];
-                        $parte1= $row["parte3"];
-                        $parte1= $row["parte4"];
-                        $parte1= $row["parte5"];
-                        $parte1= $row["parte6"];
-				?>
+                
+               
                 <!-- blog details area start -->
                 <div class="blog-details marg-100">
                     <div class="container">
@@ -417,30 +378,41 @@ $result = $conn->query($sql);
                             <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
                                 <div class="single-latest-blog bg-white">
                                     <div class="single-latest-blog-img">
-                                        <img src="<?php echo $imagen;?>" alt="">
+                                        <img src="<?php echo $_GET['imagen'];?>" alt="">
                                         <div class="single-latest-blog-date">
-                                            <h4><?php echo $fecha;?></h4>
+                                            <h4><?php echo $_GET['titulo'];?></h4>
                                           
                                         </div>
                                     </div>
                                     <div class="single-latest-blog-info">
-                                        <h4><?php echo $titulo;?></h4>
-                                        <h6><?php echo $autor?></h6>
-                                        <p><?php echo $parte1;?></p>
-                                        <p><?php echo $parte2;?></p>
-                                        <quotation><?php echo $;?></quotation>
-                                        <p><?php echo $parte3;?></p>
+                                        <h4><?php echo $_GET['autor'];?></h4>
+                                        <h6 ><?php echo $_GET['especialidad'];?></h6>
+                                         <h6 ><?php echo $_GET['fecha'];?></h6>
+                                        <p align="justify"><?php echo $_GET['parte1'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte2'];?></p>
+                                        <quotation align="justify"><?php echo $_GET['parte3'];?></quotation>
+                                        <p align="justify"><?php echo $_GET['parte4'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte5'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte6'];?></p>
+                                         <quotation align="justify"><?php echo $_GET['parte7'];?></quotation>
+                                        <p align="justify"><?php echo $_GET['parte8'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte9'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte10'];?></p>
+                                          <p align="justify"><?php echo $_GET['parte11'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte12'];?></p>
+                                        <quotation align="justify"><?php echo $_GET['parte13'];?></quotation>
+                                        <p align="justify"><?php echo $_GET['parte14'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte15'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte16'];?></p>
+                                         <quotation align="justify"><?php echo $_GET['parte17'];?></quotation>
+                                        <p align="justify"><?php echo $_GET['parte18'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte19'];?></p>
+                                        <p align="justify"><?php echo $_GET['parte20'];?></p>
+                                       
                                     </div>
                                 </div>
                                 
-                   <?php
-
-                       } } else {
-    echo "0 results";
-    }
-						
-					
-				?>             
+                               
                                 <div class="leave-comment comments">
                                     <div class="comments-title">
                                         <h4>Queremos conocer su opinion.</h4>
@@ -460,7 +432,7 @@ $result = $conn->query($sql);
                             <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                                 <div class="blog-sidebar">
                                     <div class="blog-single-sidebar">
-                                        <h3>Categotías</h3>
+                                        <h3>Otras secciones</h3>
                                         <ul>
                                             <li><a href="#">business <span>(15)</span></a></li>
                                             <li><a href="#">corporate <span>(12)</span></a></li>
@@ -471,7 +443,7 @@ $result = $conn->query($sql);
                                         </ul>
                                     </div>
                                     <div class="blog-single-sidebar">
-                                        <h3>Podría interesarle.</h3>
+                                        <h3>Otras entradas.</h3>
                                         <div class="latest-post-img">
                                             <img src="img/blog/l1.jpg" alt="">
                                         </div>

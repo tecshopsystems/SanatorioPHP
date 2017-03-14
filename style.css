@@ -2902,7 +2902,7 @@ input.f-wid {
     z-index: 9;
 }
 .animated-background.overlay-blue:after, .animated-background.video-overlay:after, .animated-background.with-overlay:after{
-    background: #0A95BE;
+    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
