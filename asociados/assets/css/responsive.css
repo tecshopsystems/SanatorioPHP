@@ -417,7 +417,10 @@
 	width: 100%;
 }
 #feed-group .feed-panel img, .schedule .tab-content img {
-	width: 100%;
+	width: 80%;
+}
+ #feed-group .feed-panel img, .schedule .tab-content2 img {
+	width: 80%;
 }
 #feed-group .feed-panel {
 	height: auto;

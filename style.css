@@ -2578,10 +2578,17 @@ input.f-wid {
     margin-bottom: 27px;
 }
 .product-description-tab .tab-content {
-    padding-bottom: 85px;
-    padding-top: 25px;
+ 
     border: 1px solid #ddd;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.product-description-tab .h2 {
+ 
+    border: 1px solid #ddd;
+  font-family: 'Montserrat', sans-serif;
+}
+
 #history, #team, #awards{
     padding-left: 50px;
     padding-top: 40px;

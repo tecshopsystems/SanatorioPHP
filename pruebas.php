@@ -1,5 +1,5 @@
-<? session_start()
- 
+<? 
+
   ?> 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -112,7 +112,8 @@
         <link rel="alternate stylesheet" type="text/css" href="switcher/background3.css" title="background3" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="switcher/background4.css" title="background4" media="screen" />
         <link rel="alternate stylesheet" type="text/css" href="switcher/background5.css" title="background5" media="screen" />
-        <!-- Color Css Files End -->
+        
+           <!-- Color Css Files End -->
     </head>
     <body>
     <!-- Pre Loader
@@ -363,7 +364,23 @@
                 </div>
                 <!-- banner end -->
                 
-              
+     <script>
+$(document).ready(function() {
+    $("#resultadoBusqueda").html('<p></p>');
+});
+
+function buscar() {
+    var textoBusqueda = $("input#busqueda").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("buscador.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadoBusqueda").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadoBusqueda").html('<p></p>');
+        };
+};
+</script>         
                 
                 <?php
                    
@@ -380,7 +397,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "select imagen, fecha, titulo, autor, especialidad, parte1, parte2, parte3, parte4, parte5, parte6, parte7, parte8, parte9, parte10, parte11, parte12, parte13, parte14, parte15, parte16, parte17, parte18, parte19, parte20 from blog order by fecha desc";
+
+$sql = "select id, imagen, fecha, titulo, autor, especialidad, parte1, parte2, parte3, parte4, parte5, parte6, parte7, parte8, parte9, parte10, parte11, parte12, parte13, parte14, parte15, parte16, parte17, parte18, parte19, parte20 from blog order by fecha desc";
 $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
 
 //if ($result->num_rows > 0) {
@@ -399,22 +417,28 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
                                 
                      <div class="container">
                      <div class="gallery_menu portfolio-menu">
+                           
                                     <ul id="filter" class="filter-menu" align="center">
-                                        <li class="current_menu_item" data-filter="*">Todo </li>
-                                        <li data-filter=".graphic">Gineco Obstetricia</li>
-                                        <li data-filter=".print">Pediatría</li>
-                                        <li data-filter=".Branding">Medicina Interna</li>
-                                        <li data-filter=".app">Urgencias</li>
+<h4><strong>Dé clic en el artículo de su interés o realice una búsqueda. </strong></h4>
                                         <div class="search-box">
-                                    <form action="buscador.php" method="POST">
-                                        <input type="text" name="input" placeholder="Buscar..." style='background-color:green;display:block;width:auto'>
-                                        <button type="submit" style='background-color:green;display:block;width:auto'><i class="fa fa-search"></i></button>
-                                    </form>
+                                    <form accept-charset="utf-8" method="POST">
+
+                                        <input type="text" name="busqueda" id="busqueda" value="" placeholder="Buscar" maxlength="30" autocomplete="off" onKeyUp="buscar();" />
+                                       <br>
+                                          </form>
+                                             <div class="row">
+                                               <div id="resultadoBusqueda"></div>
+                                                
+                                            </div>
+                                              <hr style="background-color: #0B0B61; height: 10px; width: 50%;"></hr>
                                 </div>
+
                                     </ul>
     
                                 </div><!-- gallery_menu End --> 
+                 
                         <div class="row">
+                                  
                     <?php
 					if ($result->num_rows > 0) {
 					while ($row = $result->fetch_assoc()){
@@ -424,25 +448,25 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
                         $autor= $row["autor"];
                         $especialidad=$row["especialidad"];
                         $parte1=$row["parte1"];
-                        $parte2= $row["parte2"];
-                        $parte3= $row["parte3"];
-                        $parte4= $row["parte4"];
-                        $parte5= $row["parte5"];
-                        $parte6= $row["parte6"];
-                        $parte7= $row["parte7"];
-                        $parte8= $row["parte8"];
-                        $parte9= $row["parte9"];
-                        $parte10= $row["parte10"];
-                        $parte11= $row["parte11"];
-                        $parte12= $row["parte12"];
-                        $parte13= $row["parte13"];
-                        $parte14= $row["parte14"];
-                        $parte15= $row["parte15"];
-                        $parte16= $row["parte16"];
-                        $parte17= $row["parte17"];
-                        $parte18= $row["parte18"];
-                        $parte19= $row["parte19"];
-                        $parte20= $row["parte20"];
+                        $id= $row["id"];
+                       // $parte3= $row["parte3"];
+                       // $parte4= $row["parte4"];
+                       // $parte5= $row["parte5"];
+                       // $parte6= $row["parte6"];
+                       // $parte7= $row["parte7"];
+                       // $parte8= $row["parte8"];
+                       // $parte9= $row["parte9"];
+                       // $parte10= $row["parte10"];
+                       // $parte11= $row["parte11"];
+                       // $parte12= $row["parte12"];
+                       // $parte13= $row["parte13"];
+                       // $parte14= $row["parte14"];
+                       // $parte15= $row["parte15"];
+                       // $parte16= $row["parte16"];
+                       // $parte17= $row["parte17"];
+                      //  $parte18= $row["parte18"];
+                      //  $parte19= $row["parte19"];
+                      //  $parte20= $row["parte20"];
                        
 				?>
                     
@@ -454,7 +478,7 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
                                           
                                             <h6><?php echo $row["titulo"] ?></h6>
                                         </div>
-                                        <a class="read-more" href="blogdeta.php?imagen=<?php echo $imagen?>&fecha=<?php echo $fecha?>&titulo=<?php echo $titulo?>&autor=<?php echo $autor?>&especialidad=<?php echo $especialidad?>&parte1=<?php echo $parte1 ?>&parte2=<?php echo $parte2 ?>&parte3=<?php echo $parte3 ?>&parte4=<?php echo $parte4 ?>&parte5=<?php echo $parte5 ?>&parte6=<?php echo $parte6 ?>&parte7=<?php echo $parte7 ?>&parte8=<?php echo $parte8 ?>&parte9=<?php echo $parte9 ?>&parte10=<?php echo $parte10 ?>&parte11=<?php echo $parte11 ?>&parte12=<?php echo $parte12 ?>&parte13 =<?php echo $parte13 ?>&parte14=<?php echo $parte14 ?>&parte15=<?php echo $parte15 ?>&parte16=<?php echo $parte16 ?>&parte17=<?php echo $parte17 ?> &parte18=<?php echo $parte18 ?>&parte19=<?php echo $parte19 ?>&parte20=<?php echo $parte20 ?>">Ver-completo</a>
+                                        <a class="read-more" href="blogdeta.php?&id=<?php echo $id ?>">Ver-completo</a>
                                     </div>
                                     <div class="single-latest-blog-info">
                                         <h4><a href="#"><?php echo  $row["autor"] ?></a></h4>
@@ -568,8 +592,9 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
             </div>    
         </div>    
 
-        	
+        	<script src="js/jquery-1.9.1.min.js"></script>
        	<!-- jquery
+        <script src="js/jquery-1.9.1.min.js"></script>
 		============================================ -->		
         <script src="js/vendor/jquery-1.12.4.min.js"></script>
 		<!-- bootstrap JS

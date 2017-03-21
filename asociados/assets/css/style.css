@@ -2735,6 +2735,9 @@ form label.error {
 .schedule .tab-content img {
 	display: block;
 }
+.schedule .tab-content2 img {
+	display: block;
+}
 .classes-listing-wrap {
 	padding-bottom: 30px;
 }
@@ -3313,6 +3316,11 @@ div.page-icon-top {
 	padding: 25px;
 }
 .b-lrb-none .ui-tab-content, .b-lrb-none {
+	border-left: 0px none;
+	border-right: 0px none;
+	border-bottom: 0px none;
+}
+.b-lrb-none .ui-tab-content2, .b-lrb-none {
 	border-left: 0px none;
 	border-right: 0px none;
 	border-bottom: 0px none;
