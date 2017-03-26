@@ -5,6 +5,8 @@ $nombre= $_POST['name'];
 $correo= $_POST['email'];
 $asunto= $_POST['subject'];
 $mensaje= $_POST['message'];
+$mobile= $_POST['mobile'];
+$fecha= $_POST['date'];
 $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->SMTPAuth = true;
@@ -21,10 +23,12 @@ $mail->IsHTML(true); // El correo se envía como HTML
 $mail->Subject = $asunto; // Este es el titulo del email.
 $body = "<br>Nombre del Remitente:".$nombre."</br>";
 $body .= "<br>Correo:".$correo."</br>";
+$body .= "<br>No. Asociado:".$mobile."</br>";
+$body .= "<br>Fecha:".$fecha."</br>";
 $body .= "<br>Mensaje:".$mensaje."</br>";
 $mail->Body = $body; // Mensaje a enviar
 $mail->AltBody = "Nombre del Remitente:".$nombre.""; // Texto sin html
-//$mail->AddAttachment("imagenes/imagen.jpg", "imagen.jpg");
+$mail->AddAttachment("../img/blog/1.jpg", "1.jpg");
 $exito = $mail->Send(); // Envía el correo.
 
 if($exito){

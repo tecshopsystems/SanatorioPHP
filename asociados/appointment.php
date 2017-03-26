@@ -1,8 +1,8 @@
 <?php 
 
 // Global Configuration start: From here you can change the email-id of receiver, cc, from email-id & subject;
-$to = "theembazaar@gmail.com";
-$from = "test@theembazaar.com";
+$to = "ventas@tecshopsystems.com";
+$from = "ventas@tecshopsystems.com";
 $subject = "MedicalPro - MedicalPro HTML Template";
 // Global configuration end
 $errmasg = "";

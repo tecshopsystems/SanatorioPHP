@@ -179,32 +179,38 @@
               <div role="alert" class="alert alert-success"> <strong>Gracias</strong> En poco tiempo le responderemos </div>
             </div>
           <h2>Buzón de sugerencias.</h2>
-          <form action="../mail/form-handler-asociados.php" method="post">
+             <div class="comment-form">
+           <form id="contact-form" action="../mail/form-handler-asociados.php" method="POST">
             <div class="form-field-wrapper">
               <label >Nombre</label>
-              <input type="text" id="name" class="input-sm form-full">
+              <input type="text" id="name" name="name" class="input-sm form-full">
             </div>
-       
             <div class="form-field-wrapper">
-              <label >Apellido</label>
-              <input type="text" id="mobile" class="input-sm form-full">
+              <label >No. Asociado</label>
+              <input type="tel" id="mobile" name="mobile"class="input-sm form-full">
             </div>
             <div class="form-field-wrapper">
               <label >Email</label>
-              <input type="text" id="email" class="input-sm form-full">
+              <input type="text" id="email" name="email"class="input-sm form-full">
+            </div>
+                <div class="form-field-wrapper">
+              <label >Asunto</label>
+              <input type="text" id="name" name="subject" class="input-sm form-full">
             </div>
             <div class="form-field-wrapper form-full">
               <label >Mensaje</label>
-              <textarea class="input-sm form-full height-100" id="message"> </textarea>
+              <textarea class="input-sm form-full height-100" id="message" name="message"> </textarea>
             </div>
             <div class="form-field-wrapper">
               <label >Fecha</label>
-              <input type="text" class="input-sm form-full datepicker" id="date">
+              <input type="text" class="input-sm form-full datepicker" id="date" name="date">
               <i class="fa fa-calendar" aria-hidden="true"></i> </div>
             <div class="form-field-wrapper mt-40">
-              <button name="submit" id="submit" type="button" class="btn btn-md btn-white-line input-sm form-full">Enviar</button>
-            </div>
+              <button name="submit" id="submit" type="submit" class="btn btn-md btn-white-line input-sm form-full">Enviar</button>
+                 </div>
           </form>
+                   </div>
+
         </div>
       </div>
     </div>
