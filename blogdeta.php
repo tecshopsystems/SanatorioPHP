@@ -475,7 +475,7 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
                                         <h4>Queremos conocer su opinion.</h4>
                                     </div>
                                     <div class="comment-form">
-                                        <form id="contact-form" action="mail.php" method="post">
+                                        <form id="contact-form" action="mail/form-handler-blog.php" method="post">
                                             <input type="text" placeholder="Nombre" name="name">
                                             <input type="text" placeholder="Email" name="email">
                                             <input class="f-wid" type="text" placeholder="Asunto" name="subject">
