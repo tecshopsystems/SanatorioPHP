@@ -499,9 +499,12 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
 					
 				?>
 
-                      </div>
+                      
+                        </div>
+
                     </div>
                 </div>
+
                 <!-- blog area end -->
                               <footer class="footer-area">
                     <div class="main-footer-area ptb-90">

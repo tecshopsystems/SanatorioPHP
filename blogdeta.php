@@ -498,32 +498,42 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
                                             <li><a href="#">technology <span>(18)</span></a></li>
                                             <li><a href="#">development <span>(20)</span></a></li>
                                         </ul>
-                                    </div> -->  
+                                    </div> --> 
+ 
                                     <div class="blog-single-sidebar">
-                                        <h3>Otras entradas.</h3>
+                                        <h3><a href="cale.html">Calendario de actividades.</a></h3>
                                         <div class="latest-post-img">
-                                            <img src="img/blog/l1.jpg" alt="">
+                                              <iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=800&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=9k7baa1poqqa6jhufctovun5a0%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=America%2FMexico_City" style="border-width:0" width="100%" height="200" frameborder="0" scrolling="no"></iframe>
+                                  
                                         </div>
                                         <div class="latest-post-info">
-                                            <h4><a href="#">Business Ideas</a></h4>
-                                            <h6>Ronchi/06 Jun, 2016</h6>
-                                            <p>Lorem must explain to ten how all this </p>
+                                            <h4><a href="cale.html">Ver Calendario</a></h4>
+                                            <h6>Actividades del mes.</h6>
+                                      <!----     <p>Lorem must explain to ten how all this </p>--> 
                                         </div>
+                                        
                                         <div class="latest-post-img">
-                                            <img src="img/blog/l2.jpg" alt="">
+                                         
+                                            <a class="twitter-timeline" data-height="500" data-dnt="true" data-theme="blue" data-link-color="#2B7BB9" href="https://twitter.com/sanatorioesp">Tweet de @SanatorioEsp</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                                         </div>
                                         <div class="latest-post-info">
-                                            <h4><a href="#">Design Trends</a></h4>
-                                            <h6>Silvia / 10 Jun, 2016</h6>
-                                            <p>Lorem must explain to ten how all this </p>
+                                            <h4><a href="https://twitter.com/sanatorioesp" target="_blank">Siguenos en facebook</a></h4>
+                                           
                                         </div>
-                                        <div class="latest-post-img">
-                                            <img src="img/blog/l3.jpg" alt="">
-                                        </div>
+                                       
+                                            <div class="fb-page" data-height="500" data-href="https://www.facebook.com/SanatorioEsp/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/SanatorioEsp/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SanatorioEsp/">Sanatorio Español</a></blockquote></div>
+                                            <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+                                      
                                         <div class="latest-post-info">
-                                            <h4><a href="#">Development Tips</a></h4>
-                                            <h6>Silvia / 10 Jun, 2016</h6>
-                                            <p>Lorem must explain to ten how all this </p>
+                                           
                                         </div>
                                     </div>
 
