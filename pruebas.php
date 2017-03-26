@@ -142,7 +142,7 @@
                                     <div class="cell-letter">
                                         <ul>
                                             <li><img src="img/icon/cell.png" alt="cell-no">+52(871) 7 05 33 33</li>
-                                            <li><img src="img/icon/letter.png" alt="mail">info@sanatorio.com.mx</li>
+                                            <li><img src="img/icon/letter.png" alt="mail">informacion@sanatorio.com.mx</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -210,7 +210,7 @@
                                                     <ul class="submenu-mainmenu">
                                                         <li><a href="apoy.html#imagenologia">Imagenología<i class="fa fa-angle-right"></i></a>
                                                         </li>
-                                                        <li><a href="apoy.html#laboratorio">Laboratorio<i class="fa fa-angle-right"></i></a>
+                                                        <li><a href="labo.html">Laboratorio<i class="fa fa-angle-right"></i></a>
                                                         </li>
                                                            <li><a href="apoy.html#banco">Banco de sangre<i class="fa fa-angle-right"></i></a>
                                                         </li>
@@ -296,7 +296,7 @@
                                        
                                                        <li><a href="apoy.html#imagenologia">Imagenología<i class="fa fa-angle-right"></i></a>
                                                         </li>
-                                                        <li><a href="apoy.html#laboratorio">Laboratorio<i class="fa fa-angle-right"></i></a>
+                                                        <li><a href="labo.html">Laboratorio<i class="fa fa-angle-right"></i></a>
                                                         </li>
                                                           <li><a href="apoy.html#banco">Banco de sangre<i class="fa fa-angle-right"></i></a>
                                                         </li>

@@ -144,7 +144,7 @@ session_start()
                                     <div class="cell-letter">
                                         <ul>
                                             <li><img src="img/icon/cell.png" alt="cell-no">+52(871) 7 05 33 33</li>
-                                            <li><img src="img/icon/letter.png" alt="mail">info@sanatorio.com.mx</li>
+                                            <li><img src="img/icon/letter.png" alt="mail">informacion@sanatorio.com.mx</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -212,7 +212,7 @@ session_start()
                                                     <ul class="submenu-mainmenu">
                                                         <li><a href="apoy.html#imagenologia">Imagenología<i class="fa fa-angle-right"></i></a>
                                                         </li>
-                                                        <li><a href="apoy.html#laboratorio">Laboratorio<i class="fa fa-angle-right"></i></a>
+                                                        <li><a href="labo.html">Laboratorio<i class="fa fa-angle-right"></i></a>
                                                         </li>
                                                            <li><a href="apoy.html#banco">Banco de sangre<i class="fa fa-angle-right"></i></a>
                                                         </li>
@@ -298,7 +298,7 @@ session_start()
                                        
                                                        <li><a href="apoy.html#imagenologia">Imagenología<i class="fa fa-angle-right"></i></a>
                                                         </li>
-                                                        <li><a href="apoy.html#laboratorio">Laboratorio<i class="fa fa-angle-right"></i></a>
+                                                        <li><a href="labo.html">Laboratorio<i class="fa fa-angle-right"></i></a>
                                                         </li>
                                                           <li><a href="apoy.html#banco">Banco de sangre<i class="fa fa-angle-right"></i></a>
                                                         </li>
@@ -570,7 +570,7 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
                                                 <i class="fa fa-globe"></i>
                                             </div> 
                                             <div class="footer-add-info">        
-                                                <p>Info@sanatorio.com.mx<br>www.sanatorio.com.mx/cont.html</p>
+                                                <p>informacion@sanatorio.com.mx<br>www.sanatorio.com.mx/cont.html</p>
                                             </div>    
                                         </div>
                                     </div>
