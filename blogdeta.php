@@ -686,8 +686,13 @@ $result = $conn->query($sql) or die('NO SE PUDO HACER LA CONSULTA');
 		============================================ -->         
         <script src="js/animate-heading.js"></script>  
         <!-- ajax js
+<<<<<<< HEAD
 		============================================ --     
         <script src="js/ajax-mail.js"></script>     		 
+=======
+		============================================ -->         
+        <!--<script src="js/ajax-mail.js"></script>-->
+
 		<!-- main JS
 		============================================ -->	
         <script src="js/styleswitch.js"></script>	
