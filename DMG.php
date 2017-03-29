@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
@@ -126,16 +130,9 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-  
 
-
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <div class="as-mainwrapper">
-                <!-- header start -->
+        <div class="as-mainwrapper">   
+            <!-- header start -->
             <header class="header-area">
                 <div class="header-top-area">
                     <div class="container-fluid">
@@ -350,71 +347,72 @@
             </header>
             <!-- header end -->
             <div class="main-content-wrapper">
-            <!-- banner start -->
-                <div id="apoyo" class="banner-area about-us">
+                <!-- fun area start -->
+                <div class="fun-area">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
-                                <div class="banner-text text-center">
-                                    <div class="banner-title">
-                                        <h2>Directorio médico</h2>
+                            <div class="col-lg-offset-3 col-lg-9 col-md-offset-0 col-md-12">
+                                <div class="row">
+                                        <div class="single-fun-factor-wrapper text-center">
+                                            <div class="single-fun-factor-info">
+                                                <h2><span class="">Directorio Médico General</span></h2>
+                                                <h5>Utilice el siguiente buscador para conocer a los médicos adscritos al Sanatorio Español. Puede realizar sus búsquedas de acuerdo al nombre del médico o especialidad. </h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                    
-                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="fun-angle"></div>
                 </div>
-                <!-- banner end -->
-            
-                <!-- latest blog area start -->
-                <div class="latest-blog home-one ptb-100 bg-white">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="default-title">
-                                    <h2>Directorio médico
-                                         <span></span></h2>
-                                    <p>Seleccione el directorio médico de su interés; el Directorio Médico General contiene los datos de todos los médicos registrados en el Sanatorio Español; el de Asociados incluye los datos de contacto de los médicos disponibles para nuestros asociados </p> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" >
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="single-latest-blog">
-                                    <div class="single-latest-blog-img">
-                                        <img src="img/blog/directorio1.jpg" alt="">
-                                        <div class="single-latest-blog-date">
-                                             
-                                            <h6>Directorio Médico General</h6>
-                                        </div>
-                                        <a class="read-more" href="DMG.php">Ver</a>
-                                    </div>
-                                    <div class="single-latest-blog-info">
-                                      </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="single-latest-blog">
-                                    <div class="single-latest-blog-img">
-                                        <img src="img/blog/directorio2.jpg" alt="">
-                                        <div class="single-latest-blog-date">
-                                           
-                                            <h6>Directorio Médico Asociados</h6>
-                                        </div>
-                                        <a class="read-more" href="DMA.php">Ver</a>
-                                    </div>
-                                    <div class="single-latest-blog-info">
-                                       </div>
-                                </div>
-                            </div>
-                        
-                        </div>
-                    </div>
-                </div>
-                <!-- latest blog area end -->
+                <!-- fun area end -->
+
               
-                 <!-- footer start -->
+                  <script>
+$(document).ready(function() {
+    $("#resultadoBusqueda").html('<p></p>');
+});
+
+function buscar() {
+    var textoBusqueda = $("input#busqueda").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("buscadorDMG.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadoBusqueda").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadoBusqueda").html('<p></p>');
+        };
+};
+</script>         
+                
+           
+                
+             
+                  
+                                
+                     <div class="container">
+                     <div class="gallery_menu portfolio-menu">
+                           
+                                    <ul id="filter" class="filter-menu" align="center">
+                                        <div class="search-box">
+                                    <form accept-charset="utf-8" method="POST">
+
+                                        <input type="text" name="busqueda" id="busqueda" value="" placeholder="Buscar" maxlength="30" autocomplete="off" onKeyUp="buscar();" />
+                                       <br>
+                                          </form>
+                                             <div class="row">
+                                               <div id="resultadoBusqueda"></div>
+                                                
+                                            </div>
+                                              <hr style="background-color: #0B0B61; height: 10px; width: 50%;"></hr>
+                                </div>
+
+                                    </ul>
+    
+                                </div><!-- gallery_menu End --> 
+                    </div>
+                <!-- footer start -->
                 <footer class="footer-area">
                     <div class="main-footer-area ptb-90">
                         <div class="container">
@@ -502,7 +500,8 @@
                 </footer>
                 <!-- footer end -->
             </div>    
-        </div>
+        </div>    
+
         	
        	<!-- jquery
 		============================================ -->		
@@ -563,5 +562,10 @@
 		============================================ -->	
         <script src="js/styleswitch.js"></script>	
         <script src="js/main.js"></script>
+        <!-- Redes sociales facebook
+		============================================ -->
+        <script src="assets/js/custom.js" type="text/javascript"></script>
     </body>
 </html>
+
+
