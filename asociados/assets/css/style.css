@@ -2734,9 +2734,12 @@ form label.error {
 }
 .schedule .tab-content img {
 	display: block;
+  alignment-adjust: central;
+  alignment-adjust: central;
 }
 .schedule .tab-content2 img {
 	display: block;
+    alignment-adjust: central;
 }
 .classes-listing-wrap {
 	padding-bottom: 30px;
@@ -3319,6 +3322,7 @@ div.page-icon-top {
 	border-left: 0px none;
 	border-right: 0px none;
 	border-bottom: 0px none;
+    alignment-adjust: central;
 }
 .b-lrb-none .ui-tab-content2, .b-lrb-none {
 	border-left: 0px none;
