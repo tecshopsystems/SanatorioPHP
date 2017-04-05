@@ -34,7 +34,7 @@ $exito = $mail->Send(); // Envía el correo.
 if($exito){
 echo'<script type="text/javascript">
             alert("Gracias por su mensaje en el Sanatorio Español nos importa su opinion");
-            window.location="www.sanatorio.com/cont.html"
+            window.location="../asociados/index.html"
          </script>';
 }else{
  echo'<script type="text/javascript">
