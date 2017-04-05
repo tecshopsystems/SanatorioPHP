@@ -355,8 +355,8 @@
                                 <div class="row">
                                         <div class="single-fun-factor-wrapper text-center">
                                             <div class="single-fun-factor-info">
-                                                <h2><span class="">Analisis de laboratorio</span></h2>
-                                                <h5>Utilice el siguiente buscador para conocer a los médicos adscritos al Sanatorio Español. Puede realizar sus búsquedas de acuerdo al nombre del médico o especialidad. </h5>
+                                                <h2><span class="">Análisis de laboratorio</span></h2>
+                                                <h5>Utilice el siguiente buscador para conocer la lista de análisis del Sanatorio Español. Puede realizar sus búsquedas por nombre de análisis o dar clic a la tecla ← (borrar) en el buscador, para ver la lista completa de análisis. </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -370,7 +370,19 @@
               
                   <script>
 $(document).ready(function() {
-    $("#resultadoBusqueda").html('<p></p>');
+    $.ajax({
+    url: "todosDatos.php",
+    type: "POST",
+    dataType: "html",
+    cache: false,
+    contentType: false,
+    processData: false,
+    beforeSend: function() {
+        $("#resultadoBusqueda").html("<img src='cargando.gif' width='30' height='30' />");
+    }
+    }).done(function(echo){
+        $("#resultadoBusqueda").html(echo);
+    });
 });
 
 function buscar() {
@@ -382,7 +394,7 @@ function buscar() {
          }); 
      } else { 
        $.ajax({
-    url: "buscadorAna.php",
+    url: "resultadoBusqueda.php",
     type: "POST",
     dataType: "html",
     cache: false,
@@ -390,7 +402,7 @@ function buscar() {
     processData: false,
     //Opcional, mostrar una imagen de carga mientras se obtienen los datos
     beforeSend: function() {
-        $("#resultadoBusqueda").html("<img src='cargando.gif' width='30' height='30' />");
+        $("#resultadoBusqueda").html("<img src='images/loader.gif' width='30' height='30' />");
     }
     }).done(function(echo){
         $("#resultadoBusqueda").html(echo);

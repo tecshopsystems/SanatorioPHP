@@ -76,11 +76,6 @@ if (isset($consultaBusqueda)) {
                                            <h5>Acreditado: '.$acreditado.'</h5>
                                         
                                     </div>
-                                 
-                               
-                                   
-
-                      
                 </div>
                  </div>
                ';
