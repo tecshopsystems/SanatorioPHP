@@ -1456,6 +1456,8 @@ ul.submenu-mainmenu li a i{float: right; padding-right: 20px}
     background: #28435F;
     border-radius: 0 0 3px 3px;
 }
+
+/*Este*/
 .single-latest-blog-info{
     margin-top: 16px;
 }
@@ -2381,6 +2383,7 @@ input.f-wid {
     bottom: 0;
     top: auto;
 }
+/*Este*/
 .head-info{
     margin-top: 35px;
 }
@@ -2430,6 +2433,7 @@ input.f-wid {
 /*--------------------------------------------*/
 /* 26. Service CSS
 /*--------------------------------------------*/
+/*Este, por el quality*/
 .quality-area .default-title{
     margin-top: 55px;
 }
@@ -2515,6 +2519,7 @@ input.f-wid {
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
 }
+/*Este*/
 .graphic-right {
     padding-left: 40px;
     overflow: hidden;
